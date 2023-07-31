@@ -3,7 +3,6 @@ const path=require('path');
 const reqfilter=require('./middleware')
 const app = express();
 
-
 const publicPath=path.join(__dirname,'public');
 
 app.set('view engine', 'ejs');
