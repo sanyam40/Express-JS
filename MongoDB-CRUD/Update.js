@@ -4,7 +4,7 @@ const readData = require('./readData')
 const updateData = async (data,dataTOUpdate) => {
     const db = await dbconnection();
     const result = await db.updateOne(data, dataTOUpdate)
-    console.log(result)
+    return result;
 }
 
 // const data={ name: "sanyam narang" }
