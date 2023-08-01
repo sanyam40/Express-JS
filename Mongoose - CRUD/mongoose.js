@@ -31,4 +31,11 @@ const getData = async () => {
     return data;
 }
 
-module.exports = { addData, updateData, deleteData, getData };
+const searchData = async (key) => {
+    const crudModel = mongoose.model('crud', crudSchema);
+    let data = await crudModel.find({ _id: key });
+    console.log(data);
+    return data;
+}
+
+module.exports = { addData, updateData, deleteData, getData, searchData };

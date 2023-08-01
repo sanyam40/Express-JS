@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const { addData, updateData, deleteData, getData } = require('../Mongoose - CRUD/mongoose');
+const { addData, updateData, deleteData, getData, searchData } = require('../Mongoose - CRUD/mongoose');
 
 app.use(express.json());
 
@@ -21,6 +21,11 @@ app.put('/api/updateData/:id', async (req, res) => {
 
 app.delete('/api/deleteData/:id', async (req, res) => {
     const result = await deleteData(req.params.id);
+    res.json(result);
+})
+
+app.get('/api/getData/:key', async (req, res) => {
+    const result = await searchData(req.params.key);
     res.json(result);
 })
 
